@@ -7,6 +7,7 @@ public class batchLoader {
                 "com.eziosoft.floatzelextras.commands.floof",
                 "com.eziosoft.floatzelextras.commands.mitsuru",
                 "com.eziosoft.floatzelextras.commands.yukari",
-                "com.eziosoft.floatzelextras.commands.swearcombine"};
+                "com.eziosoft.floatzelextras.commands.swearcombine",
+                "com.eziosoft.floatzelextras.commands.testcommand"};
     }
 }
