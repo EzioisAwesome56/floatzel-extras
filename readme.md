@@ -6,3 +6,8 @@ for people to download and load themselves
 Download the newest release and drop it into the mods folder.
 ## Credit
 The original artists of all the works included where never taken note of, so if you happen to know who made them, please let me know and  I will credit you.
+## Legacy Credits
+Special thanks to the following people for finding images:<br>
+Tax.<br>
+Squidsoda<br>
+Supermario18<br>
