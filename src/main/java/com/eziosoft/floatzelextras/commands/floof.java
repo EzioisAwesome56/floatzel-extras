@@ -1,15 +1,26 @@
 package com.eziosoft.floatzelextras.commands;
 
-import com.eziosoft.floatzel.Commands.FCommand;
+import com.eziosoft.floatzel.SlashCommands.FSlashableCommand;
+import com.eziosoft.floatzel.SlashCommands.Objects.SlashActionGroup;
 import com.eziosoft.floatzelextras.Utils;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
-public class floof extends FCommand {
+public class floof extends FSlashableCommand {
     public floof(){
         name = "floof";
         help = "Floof up your day!";
         category =  other;
         aliases = new String[]{"ralsei"};
+        sag = SlashActionGroup.OTHER;
+    }
+
+    @Override
+    public void SlashCmdRun(SlashCommandEvent slashCommandEvent) {
+        int card = random.nextInt(floof.length);
+        // get dat floofy boi
+        String filename = floof[card];
+        slashCommandEvent.getHook().editOriginal(Utils.getResourse("/floof/", filename), "floofyboi." + Utils.getFileType(filename)).queue();
     }
 
     @Override

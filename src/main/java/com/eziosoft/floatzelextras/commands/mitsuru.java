@@ -1,15 +1,25 @@
 package com.eziosoft.floatzelextras.commands;
 
-import com.eziosoft.floatzel.Commands.FCommand;
+import com.eziosoft.floatzel.SlashCommands.FSlashableCommand;
+import com.eziosoft.floatzel.SlashCommands.Objects.SlashActionGroup;
 import com.eziosoft.floatzelextras.Utils;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
-public class mitsuru extends FCommand {
+public class mitsuru extends FSlashableCommand {
 
     public mitsuru(){
         name = "mitsuru";
         description = "sends a picture of mitsuru from persona 3";
         category = waifu;
+        sag = SlashActionGroup.OTHER;
+    }
+
+    @Override
+    public void SlashCmdRun(SlashCommandEvent slashCommandEvent) {
+        int card = random.nextInt(mitsurus.length);
+        String filename = mitsurus[card];
+        slashCommandEvent.getHook().editOriginal(Utils.getResourse("/mit/", filename), "mitsuru."+ Utils.getFileType(filename)).queue();
     }
 
     @Override

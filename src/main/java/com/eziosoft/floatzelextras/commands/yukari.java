@@ -1,15 +1,25 @@
 package com.eziosoft.floatzelextras.commands;
-
-import com.eziosoft.floatzel.Commands.FCommand;
+;
+import com.eziosoft.floatzel.SlashCommands.FSlashableCommand;
+import com.eziosoft.floatzel.SlashCommands.Objects.SlashActionGroup;
 import com.eziosoft.floatzelextras.Utils;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 
-public class yukari extends FCommand {
+public class yukari extends FSlashableCommand {
 
     public yukari(){
         name = "yukari";
         description = "sends a picture of the best waif-i mean girl";
         category = waifu;
+        sag = SlashActionGroup.OTHER;
+    }
+
+    @Override
+    public void SlashCmdRun(SlashCommandEvent slashCommandEvent) {
+        int card = random.nextInt(yukaris.length);
+        String filename = yukaris[card];
+        slashCommandEvent.getHook().editOriginal(Utils.getResourse("/yuk/", filename), "yukari." + Utils.getFileType(filename)).queue();
     }
 
     @Override

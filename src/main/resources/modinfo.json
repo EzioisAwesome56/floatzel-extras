@@ -1,4 +1,12 @@
 {
-  "type": "commands",
-  "mainclass": "com.eziosoft.floatzelextras.batchLoader"
+  "type": "slashactions",
+  "mainclass": "despacito",
+  "mainclasses": [
+    "com.eziosoft.floatzelextras.commands.fuck",
+    "com.eziosoft.floatzelextras.commands.floof",
+    "com.eziosoft.floatzelextras.commands.mitsuru",
+    "com.eziosoft.floatzelextras.commands.yukari",
+    "com.eziosoft.floatzelextras.commands.swearcombine",
+    "com.eziosoft.floatzelextras.commands.testcommand"
+  ]
 }
